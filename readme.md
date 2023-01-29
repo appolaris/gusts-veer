@@ -12,3 +12,7 @@ Roughly speaking, gusts veer in 60% of cases.
 
 Note: dataset has resolution of 1 minute, but if something interesting happened on a sub-minute
 scale one can think it would be noticable on a minute scale as well.
+
+Upd: Just found this: https://forums.sailinganarchy.com/threads/gusts-dont-veer.173981/
+May be a better-suited dataset (seem to have actual gust windspeed) and author says there is
+no correlation.
