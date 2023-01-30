@@ -21,12 +21,16 @@ for minspeed in [2]:
         # exlcude low windspeed observations (in low wind direction may be random)
         df = df[df['min_wind_speed'] >= minspeed]
 
+        # only big gusts
+        #df = df[df['delta_speed'] >= 4]
+
         # exlcude non-consequtive rows
         df = df[df['delta_id'] == step]
 
         hitPercent = df['same_direction'].mean() * 100
         correlation = np.corrcoef(df['delta_speed'], df['delta_direction'])[0, 1]
         correlation2, p_value = stats.spearmanr(df['delta_speed'], df['delta_direction'])
+        print("    Count: ", df.rowID.count())
         print("    Pearson: ", correlation)
         print("    Spearman: ", correlation2)
         print("    % when Coriolis worked: ", hitPercent)
